@@ -1,0 +1,295 @@
+<div class="card">
+  <div class="card-header">
+    <h1>Add New Tailor</h1>
+    <p>We bring the best tailors and best prices to your home, so that you can get a perfect look at best price</p>
+  </div>
+  <div class="card-body">
+    <form #tailorForm="ngForm" (ngSubmit)="onSubmit(tailorForm)">
+
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="tailorName"
+          placeholder="Tailor Name"
+          #tailorName="ngModel"
+          [ngClass]="{'is-invalid': tailorName.errors && tailorName.touched}"
+          [(ngModel)]="tailor.tailorName"
+          minlength="2"
+          required>
+        <div [hidden]="!tailorName.errors?.required" class="invalid-feedback">
+          Tailor name required
+        </div>
+        <div [hidden]="!tailorName.errors?.minlength" class="invalid-feedback">
+          Must be atleast 2 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="shopName"
+          placeholder="Shop Name"
+          #shopName="ngModel"
+          [ngClass]="{'is-invalid': shopName.errors && shopName.touched}"
+          [(ngModel)]="tailor.shopName"
+          minlength="2"
+          required>
+        <div [hidden]="!shopName.errors?.required" class="invalid-feedback">
+          Shop name required
+        </div>
+        <div [hidden]="!shopName.errors?.minlength" class="invalid-feedback">
+          Must be atleast 2 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="shopNumber"
+          placeholder="Shop Number"
+          #shopNumber="ngModel"
+          [ngClass]="{'is-invalid': shopNumber.errors && shopName.touched}"
+          [(ngModel)]="tailor.shopNumber"
+          required>
+        <div [hidden]="!shopNumber.errors?.required" class="invalid-feedback">
+          Shop number required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="mobile"
+          placeholder="Mobile"
+          #mobile="ngModel"
+          [ngClass]="{'is-invalid': mobile.errors && mobile.touched}"
+          [(ngModel)]="tailor.mobile"
+          minlength="10"
+          required>
+        <div [hidden]="!mobile.errors?.required" class="invalid-feedback">
+          Phone number required
+        </div>
+        <div [hidden]="!mobile.errors?.minlength" class="invalid-feedback">
+          Invalid Phone Number
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          placeholder="Email"
+          #email="ngModel"
+          [ngClass]="{'is-invalid': email.errors && email.touched}"
+          [(ngModel)]="tailor.email"
+          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+          required
+          [disabled]=true>
+        <div [hidden]="!email.errors?.required" class="invalid-feedback">
+          Email required
+        </div>
+        <div [hidden]="!email.errors?.pattern" class="invalid-feedback">
+          Email is invalid
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="street"
+          placeholder="Street"
+          #street="ngModel"
+          [ngClass]="{'is-invalid': street.errors && street.touched}"
+          [(ngModel)]="tailor.street"
+          minlength="2"
+          required>
+        <div [hidden]="!street.errors?.required" class="invalid-feedback">
+          Street required
+        </div>
+        <div [hidden]="!street.errors?.minlength" class="invalid-feedback">
+          Must be atleast 2 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="area"
+          placeholder="Area"
+          #area="ngModel"
+          [ngClass]="{'is-invalid': area.errors && area.touched}"
+          [(ngModel)]="tailor.area"
+          minlength="2"
+          required>
+        <div [hidden]="!area.errors?.required" class="invalid-feedback">
+          Area required
+        </div>
+        <div [hidden]="!area.errors?.minlength" class="invalid-feedback">
+          Must be atleast 2 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="city"
+          placeholder="City"
+          #city="ngModel"
+          [ngClass]="{'is-invalid': city.errors && city.touched}"
+          [(ngModel)]="tailor.city"
+          minlength="2"
+          required>
+        <div [hidden]="!city.errors?.required" class="invalid-feedback">
+          City required
+        </div>
+        <div [hidden]="!city.errors?.minlength" class="invalid-feedback">
+          Must be atleast 2 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="state"
+          placeholder="State"
+          #state="ngModel"
+          [ngClass]="{'is-invalid': state.errors && state.touched}"
+          [(ngModel)]="tailor.state"
+          minlength="2"
+          required>
+        <div [hidden]="!state.errors?.required" class="invalid-feedback">
+          State required
+        </div>
+        <div [hidden]="!state.errors?.minlength" class="invalid-feedback">
+          Must be atleast 2 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="country"
+          placeholder="Country"
+          #country="ngModel"
+          [ngClass]="{'is-invalid': country.errors && country.touched}"
+          [(ngModel)]="tailor.country"
+          minlength="2"
+          required>
+        <div [hidden]="!country.errors?.required" class="invalid-feedback">
+          Country required
+        </div>
+        <div [hidden]="!country.errors?.minlength" class="invalid-feedback">
+          Must be atleast 2 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="description"
+          placeholder="Description"
+          #description="ngModel"
+          [ngClass]="{'is-invalid': description.errors && description.touched}"
+          [(ngModel)]="tailor.description"
+          minlength="5"
+          required>
+        <div [hidden]="!description.errors?.required" class="invalid-feedback">
+          Description required
+        </div>
+        <div [hidden]="!description.errors?.minlength" class="invalid-feedback">
+          Must be atleast 5 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="maleDress"
+          placeholder="Male Dresses (seperated by comma)"
+          #maleDress="ngModel"
+          [ngClass]="{'is-invalid': maleDress.errors && maleDress.touched}"
+          [(ngModel)]="tailor.maleDress"
+          minlength="2"
+          required>
+        <div [hidden]="!maleDress.errors?.required" class="invalid-feedback">
+          Male Dresses required
+        </div>
+        <div [hidden]="!maleDress.errors?.minlength" class="invalid-feedback">
+          Must be atleast 2 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="femaleDress"
+          placeholder="Female Dresses (seperated by comma)"
+          #femaleDress="ngModel"
+          [ngClass]="{'is-invalid': femaleDress.errors && femaleDress.touched}"
+          [(ngModel)]="tailor.femaleDress"
+          minlength="2"
+          required>
+        <div [hidden]="!femaleDress.errors?.required" class="invalid-feedback">
+          Female Dress required
+        </div>
+        <div [hidden]="!femaleDress.errors?.minlength" class="invalid-feedback">
+          Must be atleast 2 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="tags"
+          placeholder="Multiple tags (seperated by comma)"
+          #tags="ngModel"
+          [ngClass]="{'is-invalid': tags.errors && tags.touched}"
+          [(ngModel)]="tailor.tags"
+          minlength="2"
+          required>
+        <div [hidden]="!tags.errors?.required" class="invalid-feedback">
+          Tags required
+        </div>
+        <div [hidden]="!tags.errors?.minlength" class="invalid-feedback">
+          Must be atleast 2 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input
+          type="url"
+          class="form-control"
+          name="imageUrl"
+          placeholder="Tailor Image URL"
+          #imageUrl="ngModel"
+          [ngClass]="{'is-invalid': imageUrl.errors && imageUrl.touched}"
+          [(ngModel)]="tailor.imageUrl"
+          pattern="^(https?|chrome):\/\/[^\s$.?#].[^\s]*$"
+          required>
+        <div [hidden]="!imageUrl.errors?.required" class="invalid-feedback">
+          Image URL required
+        </div>
+        <div [hidden]="!imageUrl.errors?.pattern" class="invalid-feedback">
+          Invalid URL
+        </div>
+      </div>
+
+      <input type="submit" value="Submit" class="btn btn-primary btn-block">
+    </form>
+  </div>
+</div>
+

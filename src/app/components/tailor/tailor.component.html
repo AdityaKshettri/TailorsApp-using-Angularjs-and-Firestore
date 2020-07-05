@@ -1,0 +1,18 @@
+<div class="card" style="width: 20rem;margin: 1.5rem;">
+  <img src="{{ tailor.imageUrl }}" class="card-img-top" alt="{{ tailor.tailorName }}">
+  <div class="card-body">
+    <h4 class="card-title">{{ tailor.shopName }}</h4>
+    <p class="card-text">{{ tailor.description }}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><h5>Male Dresses :</h5></li>
+    <li class="list-group-item">{{ tailor.maleDress }}</li>
+    <li class="list-group-item"><h5>Female Dresses :</h5></li>
+    <li class="list-group-item">{{ tailor.femaleDress }}</li>
+    <li class="list-group-item"><h5>Expertise :</h5></li>
+    <li class="list-group-item">{{ tailor.tags }}</li>
+  </ul>
+  <div class="card-body">
+    <a routerLink="/tailor/{{tailor.id}}" class="card-link">Read more...</a>
+  </div>
+</div>

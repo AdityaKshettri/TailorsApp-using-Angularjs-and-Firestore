@@ -1,0 +1,31 @@
+<form (submit)="onSubmit()">
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <input
+        type="email"
+        name="email"
+        placeholder="Username/Email"
+        class="form-control"
+        [(ngModel)]="email"
+        required>
+    </li>
+    <li class="nav-item">
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        class="form-control"
+        style="margin-left: 1rem;"
+        [(ngModel)]="password"
+        required>
+      </li>
+    <li class="nav-item">
+      <input
+        type="submit"
+        value="Login"
+        class="btn btn-outline-success"
+        style="margin-left: 2rem;">
+    </li>
+  </ul>
+</form>
+

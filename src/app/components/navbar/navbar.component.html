@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+  <div class="container">
+    <a routerLink="/" class="navbar-brand">Tailor's App</a>
+    <button class="navbar-toggler" type="button" data-target="collapse" data-target="#navbarMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a routerLink="/" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/tailors" class="nav-link">Tailors</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/tailor/add" class="nav-link">Add new Tailor</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/tailor" class="nav-link">Tailor Detail</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li *ngIf="isLoggedIn" class="nav-item">
+          <a href="#" class="nav-link">{{ loggedInUser }}</a>
+        </li>
+        <li *ngIf="isLoggedIn" class="nav-item">
+          <a href="#" (click)="onLogoutClick()" class="nav-link">Logout</a>
+        </li>
+      </ul>
+      <app-login *ngIf="!isLoggedIn"></app-login>
+    </div>
+  </div>
+</nav>
+
